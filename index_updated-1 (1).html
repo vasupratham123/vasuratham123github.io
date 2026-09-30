@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Pratham Web Agency — premium modern website creation and design www.portfolio.com.">
+<title>Pratham — Web Designer & Creator</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#050712;--bg2:#090d1d;--card:rgba(17,23,43,.68);--line:rgba(255,255,255,.09);--text:#f7f8ff;--muted:#aab1c8;--purple:#7c6cff;--cyan:#35d9d0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:70px 70px;mask-image:linear-gradient(to bottom,black,transparent 85%);z-index:-2}
+a{text-decoration:none;color:inherit}
+.cursor{position:fixed;width:18px;height:18px;border:1px solid #8d84ff;border-radius:50%;pointer-events:none;z-index:100;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s}
+.orb{position:fixed;width:380px;height:380px;border-radius:50%;filter:blur(90px);opacity:.16;pointer-events:none;z-index:-1;background:var(--purple);top:12%;right:-120px;animation:float 8s ease-in-out infinite}
+.orb2{position:fixed;width:320px;height:320px;border-radius:50%;filter:blur(100px);opacity:.11;background:var(--cyan);bottom:5%;left:-120px;animation:float 10s ease-in-out infinite reverse}
+@keyframes float{50%{transform:translateY(35px) translateX(-25px)}}
+nav{position:fixed;top:0;left:0;width:100%;z-index:50;padding:18px 7%;display:flex;justify-content:space-between;align-items:center;background:rgba(5,7,18,.58);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.logo{font-family:"Space Grotesk";font-size:24px;font-weight:700}.logo span{color:var(--purple)}
+.links{display:flex;gap:24px}.links a{font-size:13px;color:#bdc3d7;transition:.25s}.links a:hover{color:#fff}
+.hero{min-height:100vh;padding:150px 7% 90px;display:flex;align-items:center;position:relative}
+.hero-inner{max-width:920px;animation:rise 1s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid rgba(124,108,255,.35);border-radius:999px;background:rgba(124,108,255,.08);color:#aaa4ff;font-size:12px;margin-bottom:25px}
+.dot{width:7px;height:7px;background:#55e2b4;border-radius:50%;box-shadow:0 0 14px #55e2b4}
+h1{font-family:"Space Grotesk";font-size:clamp(52px,9vw,105px);line-height:.98;letter-spacing:-5px;margin-bottom:25px}
+.gradient{background:linear-gradient(90deg,#fff,#a59cff,#62e6df);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:19px;color:var(--muted);max-width:690px;margin-bottom:32px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 21px;border-radius:13px;background:linear-gradient(135deg,#8173ff,#6155dc);font-weight:700;font-size:14px;box-shadow:0 10px 35px rgba(112,96,255,.25);transition:.25s}.btn:hover{transform:translateY(-3px);box-shadow:0 16px 45px rgba(112,96,255,.35)}.btn.alt{background:rgba(255,255,255,.04);border:1px solid var(--line);box-shadow:none}
+.hero-stats{display:flex;gap:35px;margin-top:48px}.hero-stats b{font-family:"Space Grotesk";font-size:28px;display:block}.hero-stats span{font-size:12px;color:#858da7}
+section{padding:105px 7%;position:relative}.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:42px}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#8d84ff;margin-bottom:10px}.title{font-family:"Space Grotesk";font-size:clamp(34px,5vw,54px);line-height:1.05;letter-spacing:-2px}.sub{color:var(--muted);max-width:620px;margin-top:12px}
+.glass{background:var(--card);border:1px solid var(--line);border-radius:24px;backdrop-filter:blur(16px);box-shadow:0 20px 70px rgba(0,0,0,.22)}
+.about-card{padding:35px}.about-card p{color:var(--muted);font-size:16px;max-width:800px}.about-points{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}.mini{padding:20px;border-radius:16px;background:rgba(255,255,255,.035);border:1px solid var(--line)}.mini b{font-size:14px}.mini p{font-size:12px;margin-top:5px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}.service{padding:27px;min-height:220px;transition:.35s}.service:hover{transform:translateY(-8px);border-color:rgba(124,108,255,.35);box-shadow:0 20px 50px rgba(0,0,0,.25)}.icon{font-size:30px}.service h3{margin:22px 0 8px}.service p{font-size:13px;color:var(--muted)}
+.projects{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}.project{grid-column:span 6;overflow:hidden;transition:.35s}.project:hover{transform:translateY(-7px);border-color:rgba(124,108,255,.4)}.project:nth-child(3),.project:nth-child(4){grid-column:span 4}.preview{height:230px;position:relative;overflow:hidden;background:#11172b}.preview:before{content:"";position:absolute;inset:0;background:linear-gradient(125deg,#25205a,#111b3d 50%,#103e4a);transition:.5s}.project:nth-child(2) .preview:before{background:linear-gradient(125deg,#193b54,#12182e,#42315c)}.project:nth-child(3) .preview:before{background:linear-gradient(125deg,#111,#35203e,#161628)}.project:nth-child(4) .preview:before{background:linear-gradient(125deg,#142b2d,#111a2d,#324057)}
+.project:hover .preview:before{transform:scale(1.08)}
+.browser{position:absolute;left:9%;right:9%;top:13%;bottom:-15%;border:1px solid rgba(255,255,255,.18);border-radius:13px 13px 0 0;background:rgba(5,7,15,.72);backdrop-filter:blur(10px);box-shadow:0 15px 45px rgba(0,0,0,.35);overflow:hidden}.browser-bar{height:25px;border-bottom:1px solid rgba(255,255,255,.1);display:flex;align-items:center;gap:5px;padding-left:9px}.browser-bar i{width:5px;height:5px;border-radius:50%;background:#6d7388}.mock-content{padding:22px}.mock-title{height:10px;width:55%;background:#8c83ff;border-radius:8px;margin-bottom:12px}.mock-line{height:6px;width:80%;background:#333b59;border-radius:8px;margin:7px 0}.mock-boxes{display:flex;gap:8px;margin-top:20px}.mock-box{height:55px;flex:1;background:rgba(124,108,255,.16);border:1px solid rgba(124,108,255,.25);border-radius:8px}
+.project-info{padding:24px}.project-info h3{font-family:"Space Grotesk";font-size:22px}.project-info p{font-size:13px;color:var(--muted);margin:7px 0 15px}.visit{color:#9b92ff;font-size:13px;font-weight:700}
+.contact-wrap{padding:55px;text-align:center}.contact-wrap p{color:var(--muted);max-width:650px;margin:14px auto 30px}.contact-links{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}.contact-pill{padding:13px 17px;border:1px solid var(--line);background:rgba(255,255,255,.035);border-radius:13px;font-size:13px;transition:.25s}.contact-pill:hover{border-color:#7469e9;transform:translateY(-2px)}
+footer{text-align:center;padding:28px;color:#707990;border-top:1px solid var(--line);font-size:12px}
+.reveal{opacity:0;transform:translateY(25px);transition:opacity .8s ease,transform .8s ease}.reveal.show{opacity:1;transform:none}
+@media(max-width:750px){.cursor{display:none}.links{gap:11px}.links a{font-size:11px}.hero{padding:130px 6% 75px}section{padding:75px 6%}.hero-stats{gap:20px;flex-wrap:wrap}.about-points{grid-template-columns:1fr}.project,.project:nth-child(3),.project:nth-child(4){grid-column:span 12}.section-head{display:block}.contact-wrap{padding:35px 20px}}
+</style>
+</head>
+<body>
+<div class="cursor"></div><div class="orb"></div><div class="orb2"></div>
+
+<nav>
+<a class="logo" href="#home">Pratham<span>.</span></a>
+<div class="links"><a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#work">Work</a><a href="#contact">Contact</a></div>
+</nav>
+
+<header class="hero" id="home">
+<div class="hero-inner">
+<div class="badge"><span class="dot"></span> Available for new projects</div>
+<h1>Digital experiences<br><span class="gradient">made to stand out.</span></h1>
+<p>I’m Pratham — a website creator building modern, responsive and premium-looking websites for businesses, brands and individuals.</p>
+<a class="btn" href="#work">Explore My Work ↗</a>
+<a class="btn alt" href="#contact">Start a Project</a>
+<div class="hero-stats"><div><b>6+</b><span>Websites created</span></div><div><b>100%</b><span>Responsive focus</span></div><div><b>∞</b><span>Creative ideas</span></div></div>
+</div>
+</header>
+
+<section id="about" class="reveal">
+<div class="section-head"><div><div class="eyebrow">01 / About</div><h2 class="title">Design with purpose.<br><span class="gradient">Built with passion.</span></h2></div></div>
+<div class="glass about-card"><p>Hi, I’m Pratham 👋 I create clean and modern websites with a strong focus on visual design, mobile responsiveness and a smooth user experience. I’ve worked on websites for different businesses and creative brands, turning ideas into professional online experiences.</p>
+<div class="about-points"><div class="mini"><b>🎯 User-focused</b><p>Clear sections and easy navigation.</p></div><div class="mini"><b>📱 Responsive</b><p>Designed for every screen size.</p></div><div class="mini"><b>✨ Modern</b><p>Premium visuals and smooth interactions.</p></div></div></div>
+</section>
+
+<section id="services" class="reveal">
+<div class="section-head"><div><div class="eyebrow">02 / Services</div><h2 class="title">What I <span class="gradient">create.</span></h2><p class="sub">From a simple landing page to a complete business website, I focus on making every section look polished and purposeful.</p></div></div>
+<div class="grid">
+<div class="glass service"><div class="icon">💻</div><h3>Website Creation</h3><p>Modern websites designed around your brand, content and goals.</p></div>
+<div class="glass service"><div class="icon">📱</div><h3>Responsive Design</h3><p>Beautiful layouts that adapt smoothly across phones, tablets and desktops.</p></div>
+<div class="glass service"><div class="icon">🎨</div><h3>UI & Visual Design</h3><p>Clean interfaces, attractive sections and a strong visual identity.</p></div>
+<div class="glass service"><div class="icon">🏢</div><h3>Business Websites</h3><p>Professional online presence for shops, services and local businesses.</p></div>
+<div class="glass service"><div class="icon">✨</div><h3>Landing Pages</h3><p>Focused pages for promotions, services, campaigns and personal brands.</p></div>
+<div class="glass service"><div class="icon">⚡</div><h3>Website Refresh</h3><p>Upgrade an existing website with a cleaner, more premium presentation.</p></div>
+</div>
+</section>
+
+<section id="work" class="reveal">
+<div class="section-head"><div><div class="eyebrow">03 / Selected Work</div><h2 class="title">Projects that <span class="gradient">speak.</span></h2><p class="sub">A selection of websites created and worked on by Pratham Web Agency.</p></div></div>
+<div class="projects">
+
+<div class="glass project"><a href="https://thebarberlooks.lovable.app" target="_blank"><div class="preview"><div class="browser"><div class="browser-bar"><i></i><i></i><i></i></div><div class="mock-content"><div class="mock-title"></div><div class="mock-line"></div><div class="mock-line"></div><div class="mock-boxes"><div class="mock-box"></div><div class="mock-box"></div><div class="mock-box"></div></div></div></div></div></a><div class="project-info"><h3>The Barber Looks</h3><p>Modern barber / business website.</p><a class="visit" href="https://thebarberlooks.lovable.app" target="_blank">Visit Website ↗</a></div></div>
+
+<div class="glass project"><a href="https://gurunanaktraders.lovable.app" target="_blank"><div class="preview"><div class="browser"><div class="browser-bar"><i></i><i></i><i></i></div><div class="mock-content"><div class="mock-title"></div><div class="mock-line"></div><div class="mock-line"></div><div class="mock-boxes"><div class="mock-box"></div><div class="mock-box"></div></div></div></div></div></a><div class="project-info"><h3>Guru Nanak Traders</h3><p>Professional trading business website.</p><a class="visit" href="https://gurunanaktraders.lovable.app" target="_blank">Visit Website ↗</a></div></div>
+
+<div class="glass project"><a href="https://blacktempletattoo.lovable.app" target="_blank"><div class="preview"><div class="browser"><div class="browser-bar"><i></i><i></i><i></i></div><div class="mock-content"><div class="mock-title"></div><div class="mock-line"></div><div class="mock-boxes"><div class="mock-box"></div><div class="mock-box"></div></div></div></div></div></a><div class="project-info"><h3>Black Temple Tattoo</h3><p>Bold creative tattoo brand website.</p><a class="visit" href="https://blacktempletattoo.lovable.app" target="_blank">Visit Website ↗</a></div></div>
+
+<div class="glass project"><a href="https://rikhidental.com" target="_blank"><div class="preview"><div class="browser"><div class="browser-bar"><i></i><i></i><i></i></div><div class="mock-content"><div class="mock-title"></div><div class="mock-line"></div><div class="mock-line"></div><div class="mock-boxes"><div class="mock-box"></div><div class="mock-box"></div></div></div></div></div></a><div class="project-info"><h3>Rikhi Dental</h3><p>Professional dental business website.</p><a class="visit" href="https://rikhidental.com" target="_blank">Visit Website ↗</a></div></div>
+
+</div>
+</section>
+
+<section id="contact" class="reveal">
+<div class="glass contact-wrap">
+<div class="eyebrow">04 / Contact</div>
+<h2 class="title">Let’s build something <span class="gradient">great.</span></h2>
+<p>Have a website idea? Let’s turn it into a polished digital experience. Pricing is negotiable.</p>
+<div class="contact-links">
+<a class="contact-pill" href="tel:6283212963">📞 6283212963</a>
+<a class="contact-pill" href="mailto:vasupratham1@gmail.com">✉️ vasupratham1@gmail.com</a>
+<a class="contact-pill" href="https://instagram.com/pratham.web.agency" target="_blank">◎ @pratham.web.agency</a>
+</div>
+</div>
+</section>
+
+<footer>© 2026 Pratham Web Agency · Website Creator</footer>
+
+<script>
+const cursor=document.querySelector('.cursor');
+document.addEventListener('mousemove',e=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px'});
+document.querySelectorAll('a').forEach(a=>{a.addEventListener('mouseenter',()=>{cursor.style.width='34px';cursor.style.height='34px';cursor.style.background='rgba(124,108,255,.12)'});
+a.addEventListener('mouseleave',()=>{cursor.style.width='18px';cursor.style.height='18px';cursor.style.background='transparent'})});
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
